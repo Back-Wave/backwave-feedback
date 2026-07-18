@@ -1,0 +1,48 @@
+name: Feature Request
+description: Suggest a new capability or improvement for BackWave
+labels: ["type: feature", "status: needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea. Lead with the *problem* you're trying to solve, so it can be evaluated on
+        its merits even if the eventual solution looks different from what you sketch.
+        For "how do I…?" questions, please use [Discussions](../../discussions) instead.
+  - type: checkboxes
+    id: prior-search
+    attributes:
+      label: Prior search
+      options:
+        - label: I searched existing issues and this isn't a duplicate.
+          required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / use case
+      description: What are you trying to do, and why is it hard or impossible today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: A description of the capability or change you'd like.
+    validations:
+      required: true
+  - type: textarea
+    id: api-sketch
+    attributes:
+      label: Proposed API / example
+      description: >
+        Optional. A sketch of what using this might look like: a proposed API, config, or code
+        snippet. Rendered as code, so no need for backticks.
+      render: csharp
+    validations:
+      required: false
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives / workarounds considered
+      description: Optional. Anything you've tried or considered, and why it falls short.
+    validations:
+      required: false

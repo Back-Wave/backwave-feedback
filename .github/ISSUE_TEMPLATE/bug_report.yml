@@ -1,0 +1,79 @@
+name: Bug Report
+description: Report a reproducible bug in BackWave
+labels: ["type: bug", "status: needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. The more precisely you can reproduce it, the faster it gets fixed.
+        For "how do I…?" questions, please use [Discussions](../../discussions) instead.
+  - type: checkboxes
+    id: prior-search
+    attributes:
+      label: Prior search
+      options:
+        - label: I searched existing issues and this isn't a duplicate.
+          required: true
+  - type: input
+    id: version
+    attributes:
+      label: BackWave version
+      description: The version of the BackWave package(s) you're running, e.g. `1.2.0`.
+      placeholder: "1.2.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: adapter
+    attributes:
+      label: Storage adapter
+      description: Which storage adapter is in use?
+      options:
+        - Postgres
+        - SQL Server
+        - SQLite
+        - In-Memory
+    validations:
+      required: true
+  - type: input
+    id: dotnet
+    attributes:
+      label: .NET version
+      description: The target framework you're running, e.g. `net9.0`.
+      placeholder: "net9.0"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: The behavior you observed.
+    validations:
+      required: true
+  - type: textarea
+    id: what-expected
+    attributes:
+      label: What did you expect?
+      description: The behavior you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal steps to reproduce
+      description: >
+        Numbered steps, or a link to a minimal reproduction repo/gist. The smaller and more
+        self-contained the repro, the faster this gets resolved.
+      placeholder: |
+        1. Configure the Postgres adapter with …
+        2. Enqueue a job that …
+        3. Observe that …
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / stack trace
+      description: Any relevant logs or stack traces. Will be rendered as code, so no need for backticks.
+      render: text
+    validations:
+      required: false
